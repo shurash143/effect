@@ -6,7 +6,7 @@ export default function SettingsPage() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('http://localhost:3000/settings')
+    fetch('https://effect-8t1j.onrender.com/settings')
       .then((response) => response.json())
       .then((data) => {
         setSettings(data);
@@ -19,7 +19,7 @@ export default function SettingsPage() {
   }, []);
 
   const handleSave = () => {
-    fetch('http://localhost:3000/settings', {
+    fetch('https://effect-8t1j.onrender.com/settings', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

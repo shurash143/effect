@@ -30,7 +30,7 @@ export default function SignUp() {
   setLoading(true);
 
   try {
-    const res = await fetch('http://localhost:3000/user', {
+    const res = await fetch('https://effect-8t1j.onrender.com/user', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

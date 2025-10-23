@@ -11,7 +11,7 @@ export default function JobSearch() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('http://localhost:3000/jobs') // Update this URL if needed
+    fetch('https://effect-8t1j.onrender.com/jobs') // Update this URL if needed
       .then((res) => res.json())
       .then((data) => {
         setJobs(data);

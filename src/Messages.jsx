@@ -39,7 +39,7 @@ export default function MessagesPage() {
 
     if (editingMessageId) {
       // Editing existing message
-      fetch(`http://localhost:3000/messages/${editingMessageId}`, {
+      fetch(`https://effect-8t1j.onrender.commessages/${editingMessageId}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -71,7 +71,7 @@ export default function MessagesPage() {
         createdAt: new Date().toISOString(),
       };
 
-      fetch('http://localhost:3000/messages', {
+      fetch('https://effect-8t1j.onrender.com/messages', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(newMsg),
@@ -95,7 +95,7 @@ export default function MessagesPage() {
   const handleDelete = (id) => {
     if (!window.confirm('Are you sure you want to delete this message?')) return;
 
-    fetch(`http://localhost:3000/messages/${id}`, {
+    fetch(`https://effect-8t1j.onrender.com/messages/${id}`, {
       method: 'DELETE',
     })
       .then((res) => {

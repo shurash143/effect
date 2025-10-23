@@ -10,7 +10,7 @@ export default function SavedJobsPage() {
 
   // Fetch all jobs
   useEffect(() => {
-    fetch('http://localhost:3000/Jobs')
+    fetch('https://effect-8t1j.onrender.com/Jobs')
       .then(res => res.json())
       .then(data => {
         setSavedJobs(data);

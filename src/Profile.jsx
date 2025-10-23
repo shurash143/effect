@@ -44,7 +44,7 @@ export default function ProfilePage() {
 
   // Save changes to backend
   const handleSave = () => {
-    fetch('http://localhost:3000/user', {
+    fetch('https://effect-8t1j.onrender.com/user', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(tempUser)

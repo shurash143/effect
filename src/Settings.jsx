@@ -31,8 +31,8 @@ export default function Settings() {
     e.preventDefault();
 
     const url = adminId
-      ? `http://localhost:3000/admin/${adminId}`
-      : 'http://localhost:3000/admin';
+      ? `https://effect-8t1j.onrender.com/admin/${adminId}`
+      : 'https://effect-8t1j.onrender.com/admin';
 
     const method = adminId ? 'PUT' : 'POST';
 
