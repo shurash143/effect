@@ -40,7 +40,7 @@ export default function SavedJobsPage() {
     setApplyingJobId(jobId);
 
     try {
-      const response = await fetch('http://localhost:3000/applications', {
+      const response = await fetch('https://effect-8t1j.onrender.com/applications', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ seekerId, jobId }),

@@ -12,7 +12,7 @@ export default function MessagesPage() {
 
   // Fetch all messages
   useEffect(() => {
-    fetch('http://localhost:3000/messages')
+    fetch('https://effect-8t1j.onrender.com/messages')
       .then((res) => {
         if (!res.ok) throw new Error('Failed to fetch messages');
         return res.json();
@@ -39,7 +39,7 @@ export default function MessagesPage() {
 
     if (editingMessageId) {
       // Editing existing message
-      fetch(`https://effect-8t1j.onrender.commessages/${editingMessageId}`, {
+      fetch(`https://effect-8t1j.onrender.com/messages/${editingMessageId}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

@@ -108,14 +108,14 @@ export default function AdminDashboard() {
   const handleApplicationEdit = (app) => alert(`Edit application from seeker ${app.seekerId}`);
   const handleApplicationDelete = (id) => {
     if (confirm('Delete this application?')) {
-      fetch(`https://effect-8t1j.onrender.com/applications/${id}`, { method: 'DELETE' })
+      fetch(`https://effect-8t1j.onrender.com/${id}`, { method: 'DELETE' })
         .then(() => fetch('https://effect-8t1j.onrender.com/applications').then(res => res.json()).then(setApplications));
     }
   };
 
   const handleApplicationApprove = (id) => {
     if (confirm('Approve this application?')) {
-      fetch(`hhttps://effect-8t1j.onrender.com/applications/${id}`, {
+      fetch(`https://effect-8t1j.onrender.com/applications/${id}`, {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ status: 'approved' }),
