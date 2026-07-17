@@ -1,14 +1,12 @@
 {
   "name": "effect-api",
   "version": "1.0.0",
-  "main": "server.js",
   "type": "module",
   "scripts": {
-      "build": "echo Build completed",
     "start": "node server.js"
   },
   "dependencies": {
-    "json-server": "^1.0.0-beta.1",
-    "cors": "^2.8.5"
+    "cors": "^2.8.5",
+    "json-server": "0.17.4"
   }
 }
