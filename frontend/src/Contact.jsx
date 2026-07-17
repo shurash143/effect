@@ -17,7 +17,7 @@ export default function ContactPage() {
     }
 
     try {
-      const res = await fetch('https://effect-8t1j.onrender.com/contact', {
+      const res = await fetch('https://effect-react.onrender.com/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name, email, message, date: new Date().toISOString() }),

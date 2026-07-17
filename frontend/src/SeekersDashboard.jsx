@@ -11,7 +11,7 @@ export default function SeekersDashboard({ seekers }) {
 
   // Fetch job applications for the seeker
   useEffect(() => {
-    fetch(`https://effect-8t1j.onrender.com/jobs?userId=${seekerId}`)
+    fetch(`https://effect-react.onrender.com/Jobs?userId=${seekerId}`)
       .then(res => res.json())
       .then(data => {
         setJobs(data);
@@ -25,7 +25,7 @@ export default function SeekersDashboard({ seekers }) {
 
   // Fetch approved jobs for the seeker
   useEffect(() => {
-    fetch(`https://effect-8t1j.onrender.com/applications?seekerId=${seekerId}&status=approved`)
+    fetch(`https://effect-react.onrender.com/applications?seekerId=${seekerId}&status=approved`)
       .then(res => res.json())
       .then(data => {
         setApprovedJobs(data);

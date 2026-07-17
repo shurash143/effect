@@ -10,7 +10,7 @@ export default function ProfilePage() {
 
   // Fetch profile data from backend
   useEffect(() => {
-    fetch('https://effect-8t1j.onrender.com/user')
+    fetch('https://effect-react.onrender.com/user')
       .then((res) => res.json())
       .then((data) => {
         setUser(data);

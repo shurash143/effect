@@ -10,7 +10,7 @@ export default function SavedJobsPage() {
 
   // Fetch all jobs
   useEffect(() => {
-    fetch('https://effect-8t1j.onrender.com/Jobs')
+    fetch('https://effect-react.onrender.com/Jobs')
       .then(res => res.json())
       .then(data => {
         setSavedJobs(data);
@@ -40,7 +40,7 @@ export default function SavedJobsPage() {
     setApplyingJobId(jobId);
 
     try {
-      const response = await fetch('https://effect-8t1j.onrender.com/applications', {
+      const response = await fetch('https://effect-react.onrender.com/applications', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ seekerId, jobId }),

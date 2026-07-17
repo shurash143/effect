@@ -12,7 +12,7 @@ export default function MessagesPage() {
 
   // Fetch all messages
   useEffect(() => {
-    fetch('https://effect-8t1j.onrender.com/messages')
+    fetch('https://effect-react.onrender.com/messages')
       .then((res) => {
         if (!res.ok) throw new Error('Failed to fetch messages');
         return res.json();
@@ -39,7 +39,7 @@ export default function MessagesPage() {
 
     if (editingMessageId) {
       // Editing existing message
-      fetch(`https://effect-8t1j.onrender.com/messages/${editingMessageId}`, {
+      fetch(`https://effect-react.onrender.com/messages/${editingMessageId}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -70,8 +70,8 @@ export default function MessagesPage() {
         content: newMessage,
         createdAt: new Date().toISOString(),
       };
-
-      fetch('https://effect-8t1j.onrender.com/messages', {
+m
+      fetch('https://effect-react.onrender.com/messages', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(newMsg),
@@ -95,7 +95,7 @@ export default function MessagesPage() {
   const handleDelete = (id) => {
     if (!window.confirm('Are you sure you want to delete this message?')) return;
 
-    fetch(`https://effect-8t1j.onrender.com/messages/${id}`, {
+    fetch(`https://effect-react.onrender.com/messages/${id}`, {
       method: 'DELETE',
     })
       .then((res) => {

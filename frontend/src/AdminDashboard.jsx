@@ -42,19 +42,19 @@ export default function AdminDashboard() {
 
   // FETCH DATA
   useEffect(() => {
-    fetch('https://effect-8t1j.onrender.com/Jobs')
+    fetch('https://effect-react.onrender.com/Jobs')
       .then(res => res.json())
       .then(setJobs);
 
-    fetch('https://effect-8t1j.onrender.com/applications')
+    fetch('https://effect-react.onrender.com/applications')
       .then(res => res.json())
       .then(setApplications);
 
-    fetch('https://effect-8t1j.onrender.com/user')
+    fetch('https://effect-react.onrender.com/user')
       .then(res => res.json())
       .then(setUsers);
 
-    fetch('https://effect-8t1j.onrender.com/contact')
+    fetch('https://effect-react.onrender.com/contact')
       .then(res => res.json())
       .then(data => {
         setContacts(data);
@@ -64,7 +64,7 @@ export default function AdminDashboard() {
         setLoading(false);
       });
 
-    fetch('https://effect-8t1j.onrender.com/messages')
+    fetch('https://effect-react.onrender.com/messages')
       .then(res => res.json())
       .then(setMessages);
   }, []);
@@ -74,7 +74,7 @@ export default function AdminDashboard() {
 
   const handleJobSubmit = (e) => {
     e.preventDefault();
-    const url = editingJobId ? `https://effect-8t1j.onrender.com/Jobs/${editingJobId}` : 'https://effect-8t1j.onrender.com/Jobs';
+    const url = editingJobId ? `https://effect-react.onrender.com/Jobs/${editingJobId}` : 'https://effect-react.onrender.com/Jobs';
     const method = editingJobId ? 'PUT' : 'POST';
 
     fetch(url, {
@@ -86,7 +86,7 @@ export default function AdminDashboard() {
       .then(() => {
         setForm({ title: '', company: '', location: '', type: '', career: '', description: '' });
         setEditingJobId(null);
-        return fetch('https://effect-8t1j.onrender.com/Jobs');
+        return fetch('https://effect-react.onrender.com/Jobs');
       })
       .then(res => res.json())
       .then(setJobs);
@@ -99,8 +99,8 @@ export default function AdminDashboard() {
 
   const handleJobDelete = (id) => {
     if (confirm('Delete this job?')) {
-      fetch(`https://effect-8t1j.onrender.com/Jobs/${id}`, { method: 'DELETE' })
-        .then(() => fetch('https://effect-8t1j.onrender.com/Jobs').then(res => res.json()).then(setJobs));
+      fetch(`https://effect-react.onrender.com/${id}`, { method: 'DELETE' })
+        .then(() => fetch('https://effect-react.onrender.com/Jobs').then(res => res.json()).then(setJobs));
     }
   };
 
@@ -108,21 +108,21 @@ export default function AdminDashboard() {
   const handleApplicationEdit = (app) => alert(`Edit application from seeker ${app.seekerId}`);
   const handleApplicationDelete = (id) => {
     if (confirm('Delete this application?')) {
-      fetch(`https://effect-8t1j.onrender.com/${id}`, { method: 'DELETE' })
-        .then(() => fetch('https://effect-8t1j.onrender.com/applications').then(res => res.json()).then(setApplications));
+      fetch(`https://effect-react.onrender.com/${id}`, { method: 'DELETE' })
+        .then(() => fetch('https://effect-react.onrender.com/applications').then(res => res.json()).then(setApplications));
     }
   };
 
   const handleApplicationApprove = (id) => {
     if (confirm('Approve this application?')) {
-      fetch(`https://effect-8t1j.onrender.com/applications/${id}`, {
+      fetch(`https://effect-react.onrender.com/applications/${id}`, {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ status: 'approved' }),
       })
         .then(() => {
           alert('Application Approved!');
-          return fetch('https://effect-8t1j.onrender.com/applications');
+          return fetch('https://effect-react.onrender.com/applications');
         })
         .then(res => res.json())
         .then(setApplications);
@@ -141,7 +141,7 @@ export default function AdminDashboard() {
     e.preventDefault();
     if (!editingContactId) return;
 
-    fetch(`https://effect-8t1j.onrender.com/contact/${editingContactId}`, {
+    fetch(`https://effect-react.onrender.com/contact/${editingContactId}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ ...contactForm, date: new Date().toISOString() }),
@@ -149,7 +149,7 @@ export default function AdminDashboard() {
       .then(() => {
         setEditingContactId(null);
         setContactForm({ name: '', email: '', message: '' });
-        return fetch('https://effect-8t1j.onrender.com/contact');
+        return fetch('https://effect-react.onrender.com/contact');
       })
       .then(res => res.json())
       .then(setContacts);
@@ -157,8 +157,8 @@ export default function AdminDashboard() {
 
   const handleDeleteContact = (id) => {
     if (confirm('Delete this contact?')) {
-      fetch(`https://effect-8t1j.onrender.com/contact/${id}`, { method: 'DELETE' })
-        .then(() => fetch('https://effect-8t1j.onrender.com/contact').then(res => res.json()).then(setContacts));
+      fetch(`https://effect-react.onrender.com/contact/${id}`, { method: 'DELETE' })
+        .then(() => fetch('https://effect-react.onrender.com/contact').then(res => res.json()).then(setContacts));
     }
   };
 
@@ -174,7 +174,7 @@ export default function AdminDashboard() {
     e.preventDefault();
     if (!editingMessageId) return;
 
-    fetch(`https://effect-8t1j.onrender.com/messages/${editingMessageId}`, {
+    fetch(`https://effect-react.onrender.com/messages/${editingMessageId}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ ...messageForm, createdAt: new Date().toISOString() }),
@@ -182,7 +182,7 @@ export default function AdminDashboard() {
       .then(() => {
         setEditingMessageId(null);
         setMessageForm({ sender: '', content: '' });
-        return fetch('https://effect-8t1j.onrender.com/messages');
+        return fetch('https://effect-react.onrender.com/messages');
       })
       .then(res => res.json())
       .then(setMessages);
@@ -190,8 +190,8 @@ export default function AdminDashboard() {
 
   const handleDeleteMessage = (id) => {
     if (confirm('Delete this message?')) {
-      fetch(`https://effect-8t1j.onrender.com/messages/${id}`, { method: 'DELETE' })
-        .then(() => fetch('https://effect-8t1j.onrender.com/messages').then(res => res.json()).then(setMessages));
+      fetch(`https://effect-react.onrender.com/messages/${id}`, { method: 'DELETE' })
+        .then(() => fetch('https://effect-react.onrender.com/messages').then(res => res.json()).then(setMessages));
     }
   };
 
