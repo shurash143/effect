@@ -21,9 +21,7 @@ export default function Login() {
 
     try {
       // Fetch users with the given email
-     const response = await fetch(
-  `https://effect-project.onrender.com/user?email=${encodeURIComponent(email)}`
-);
+      const res = await fetch(`https://effect-8t1j.onrender.com/user?email=${email}`);
       const users = await res.json();
 
       // Find user with matching password
